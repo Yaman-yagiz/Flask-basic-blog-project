@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+{% if article %}
+<h4>{{article.title}}</h4>
+<hr>
+<small>Created by {{article.author}}</small> 
+<br>
+<small>Created at {{article.created_date}}</small>
+<hr>
+<div class="jumbotron">
+    <p>{{article.content|safe}}</p>
+    <!-- |safe ifadesi flask jinja template'ın filtreleme özelliğidir.-->
+</div>
+
+{% else %}
+<div class="alert alert-succes"> 
+    There is no article
+</div>
+{% endif %}
+
+{% endblock %}
+

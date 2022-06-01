@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="jumbotron text-center">
+    <h3>Welcome to my personal software blog!</h3>
+    <p>This blog about data science and machine learning algorithms.</p>
+</div>
+<ul>
+    <!-- html içersinde döngü kullanımı
+
+    {% for article in articles %}
+        <li><b>ID:</b> {{article.id}} - <b>Title:</b> {{article.title}} - <b>Author:</b> {{article.author}}</li>
+    {% endfor %}
+    
+    -->
+</ul>
+<div class="jumbotron">
+    <br>
+    <h4>Supervised Learning</h2>
+    <p>Input data is called training data and has a known label or result such as spam/not-spam or a stock price at a time.</p>
+    <p>A model is prepared through a training process in which it is required to make predictions and is corrected when those predictions are wrong. 
+        The training process continues until the model achieves a desired level of accuracy on the training data.</p>
+    <p>Example problems are classification and regression.
+        Example algorithms include: Logistic Regression and the Back Propagation Neural Network.</p>
+        <br>
+    <h4>Unsupervised Learning</h4>
+    <p>Input data is not labeled and does not have a known result.</p>
+    <p>A model is prepared by deducing structures present in the input data. 
+        This may be to extract general rules. It may be through a mathematical process to systematically reduce redundancy, or it may be to organize data by similarity.</p>
+    <p>Example problems are clustering, dimensionality reduction and association rule learning.</p>
+    <p>Example algorithms include: the Apriori algorithm and K-Means.</p>
+    <br>
+    <h4>Semi-Supervised Learning</h4>
+    <p>Input data is a mixture of labeled and unlabelled examples.</p>
+    <p>There is a desired prediction problem but the model must learn the structures to organize the data as well as make predictions.</p>
+    <p>Example problems are classification and regression.</p>
+    <p>Example algorithms are extensions to other flexible methods that make assumptions about how to model the unlabeled data.</p>
+</div>
+
+
+{% endblock %}

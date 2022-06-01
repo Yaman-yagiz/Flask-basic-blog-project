@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h3>Articles</h3>
+    <hr>
+    {% if articles %}
+    <form action="/search" method="post">
+        <input type="search" name="keyword" class="input-sm" placeholder="Search" />
+        <button type="submit" class="btn btn-dark btn-sm">Search</button>
+    </form>
+  <br><br>
+    {% for i in articles %}
+    <div class="list-group">
+        <a class="list-group-item list-group-item-action flex-column align-items-start" href="/go_article/{{i.id}}">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{i['title']}}</h5>
+            <small>{{i['created_date']}}</small>
+          </div>
+          <p class="mb-1">{{i['content']|safe}}</p>
+          <small>{{i['author']}}</small>
+        </a>
+      </div>
+    {% endfor %}
+    {% else %}
+    <div class="alert alert-danger"> There is no article</div>
+    {% endif %}
+{% endblock %}
